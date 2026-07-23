@@ -1,0 +1,89 @@
+# Contributing
+
+Thank you for contributing to this project. The usual workflow is to choose or
+create a GitHub issue, make a focused change, and open a pull request that links
+to the issue.
+
+## 1. Find or create an issue
+
+Before starting work:
+
+1. Check the repository's GitHub issues to see whether the change has already
+   been requested or is in progress.
+2. Choose an existing issue, or create a new one that clearly describes the
+   problem, proposed change, and expected behavior.
+3. Use the issue discussion to clarify requirements before making a large or
+   potentially breaking change.
+
+## 2. Set up the project
+
+Clone the repository:
+
+```bash
+git clone https://github.com/ibadia/fullstack-template.git
+cd fullstack-template
+```
+
+Create a branch from the latest default branch:
+
+```bash
+git switch main
+git pull origin main
+git switch -c <issue-number>-short-description
+```
+
+Follow the setup instructions in [README.md](README.md) for the backend,
+frontend, or both, depending on your change.
+
+## 3. Make and verify the change
+
+- Keep the change focused on the linked issue.
+- Follow the existing code style and update documentation when behavior changes.
+- Add or update tests for changed behavior.
+- Do not commit secrets, local environment files, generated files, or unrelated
+  formatting changes.
+
+Run the relevant checks before opening a pull request.
+
+Backend:
+
+```bash
+cd backend
+python -m pytest
+ruff check .
+black --check .
+```
+
+Frontend:
+
+```bash
+cd frontend
+npm run lint
+npm run build
+```
+
+## 4. Commit and push
+
+Write a concise commit message that explains the change:
+
+```bash
+git add .
+git commit -m "Add concise description of change"
+git push -u origin <issue-number>-short-description
+```
+
+## 5. Open a pull request
+
+Open a pull request from your branch to the repository's default branch. In the
+pull request:
+
+- Explain what changed and why.
+- Link the issue with a closing keyword, such as `Fixes #123`, `Closes #123`,
+  or `Resolves #123`. GitHub will close the linked issue when the pull request
+  is merged.
+- Describe how you tested the change.
+- Include screenshots or recordings for visible user-interface changes.
+- Keep the pull request limited to one issue whenever practical.
+
+Respond to review feedback with additional commits. Avoid rewriting published
+history unless a maintainer asks you to do so.

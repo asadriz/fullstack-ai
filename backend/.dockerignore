@@ -1,0 +1,16 @@
+.coverage
+.env
+.git
+.gitignore
+.pytest_cache
+.ruff_cache
+Dockerfile
+README.md
+__pycache__
+db.sqlite3
+htmlcov
+media
+staticfiles
+venv
+*.log
+*.py[cod]
