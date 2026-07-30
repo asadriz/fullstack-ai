@@ -6,6 +6,7 @@ from rest_framework.views import APIView
 class HealthCheckAPI(APIView):
     permission_classes = (AllowAny,)
 
+    
     def get(self, request):
         status = {"status": "OK"}
         return Response(status)
